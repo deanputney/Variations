@@ -1,0 +1,232 @@
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#svg_div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+}
+
+#identifier {
+    position: relative;
+    /*background-color: rgba(220, 200, 200, 0.5);*/
+    width: 100%;
+    height: 30%;
+    min-height: 70px;
+    overflow: hidden;
+}
+
+#svg_preview_container {
+    position: relative;
+    /*background-color: rgba(200, 200, 220, 0.5);*/
+    width: 100%;
+    height: 70%;
+}
+
+#svg_preview {
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    /*margin-left: 15%;*/
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ccc;
+}
+
+#show_controls_div {
+    position: absolute;
+    /*width: 80px;*/
+    width: 12%;
+    height: 100%;
+    bottom: 0px;
+    z-index: 3;
+    background-color: rgba(64, 64, 64, 0.06);
+    overflow: hidden;
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+#show_control_pane_text {
+    /*width: 100%;
+    height: 100%;*/
+    position: absolute;
+    bottom: 2%;
+    left: 8%;
+    z-index: 4;
+    color: rgba(64, 64, 194, 1.0);
+    line-height: 95%;
+    /*text-shadow: 0px 0px 3px rgb(0, 0, 0);*/
+    -webkit-transition: all 200ms ease-in-out;
+}
+
+#control_pane_div {
+    position: absolute;
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    z-index: 2;
+    visibility: hidden;
+    background-color: rgba(185,185,220,0.3);
+}
+
+#control_pane_content_wrapper {
+    margin: auto auto;
+    width: 100%;
+    height: 90%;
+    max-height: 300px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    background-color: #fff;
+/*    opacity: 0.3; */
+}
+/*
+#cool_guy:hover {
+    opacity: 1.0;
+}
+*/
+#control_pane_vertical_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+}
+
+#control_pane_interior {
+    margin: auto auto;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+}
+
+#control_pane_first_half {
+    position: relative;
+    /*background-color: rgba(185, 185, 220, 0.1);*/
+    height: 100%;
+    width: 49%;
+    float: left;
+    margin-right: 1%;
+}
+
+#control_pane_second_half_vertical_container {
+display: inline-flex;
+    position: relative;
+    /*background-color: rgba(220, 185, 185, 0.1);*/
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+#control_pane_second_half {
+    margin: auto auto;
+}
+
+#control_descriptors {
+    position: relative;
+    /*background-color: rgba(185, 185, 220, 0.2);*/
+    height: 100%;
+    width: 49%;
+    float: left;
+    margin-right: 1%;
+    text-align: right;
+}
+
+#control_elements {
+    position: relative;
+    /*background-color: rgba(220, 185, 185, 0.2);*/
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.input_field {
+    width: 100%;
+    text-align: right;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.input_editable {
+    width: 15%;
+    min-width: 20px;
+}
+
+.has_below_input_field {
+    border-bottom: dotted;
+    border-width: 1px;
+    border-color: rgba(0, 0, 150, 0.5);
+}
+
+.title_1 {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.title_2 {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+}
+
+.title_3 {
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    color: #448;
+}
+
+.large_text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.0vw;
+    font-weight: bold;
+}
+
+.input_hoverable {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    color: rgb(150, 30, 30);
+}
+
+.input_validation_error {
+    color: rgb(150, 30, 30);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #800;
+    float: left;
+    visibility: hidden;
+}
+
+.input_tooltip {
+    color: rgb(30, 30, 150);
+    /*border-style: dotted;
+    border-width: 1px;
+    border-color: #008;*/
+}
+
+/*
+#draw_controls {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    resize: none;
+}
+
+#title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12;
+    color: #888;
+    margin-left: 5%;
+}
+*/
