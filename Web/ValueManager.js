@@ -53,6 +53,8 @@ ValueManager.prototype = {
     ERROR_TOO_LARGE_RANGE_VALUE: "Please use -1 or values between 0 and ",
     ERROR_FIRST_VALUE_GREATER_THAN_SECOND: "The end value must be greater than or equal to the start value",
 
+    ERROR_TRY_RANGE: "<br />(Maybe try a range?)",
+
     SIDES_ID: "input_sides_error",
     EDGES_ID: "input_edges_error",
     SHAPE_ID: "input_shape_error",
@@ -234,7 +236,7 @@ ValueManager.prototype = {
                 return {
                     "accepted": false,
                     "id": this.SIDES_ID,
-                    "error": this.ERROR_INFINITE_SHAPES
+                    "error": this.ERROR_INFINITE_SHAPES + this.ERROR_TRY_RANGE
                 };
             }
 
@@ -242,7 +244,7 @@ ValueManager.prototype = {
                 return {
                     "accepted": false,
                     "id": this.SIDES_ID,
-                    "error": this.ERROR_TOO_MANY_SHAPES + "(" + (NUMBER_OF_DRAWN_SHAPES) + ")"
+                    "error": this.ERROR_TOO_MANY_SHAPES + "(" + (NUMBER_OF_DRAWN_SHAPES) + ")" + this.ERROR_TRY_RANGE
                 };
             }
         }
@@ -303,7 +305,7 @@ ValueManager.prototype = {
                 return {
                     "accepted": false,
                     "id": this.EDGES_ID,
-                    "error": this.ERROR_INFINITE_SHAPES
+                    "error": this.ERROR_INFINITE_SHAPES + this.ERROR_TRY_RANGE
                 };
             }
 
@@ -311,7 +313,7 @@ ValueManager.prototype = {
                 return {
                     "accepted": false,
                     "id": this.EDGES_ID,
-                    "error": this.ERROR_TOO_MANY_SHAPES + "(" + (NUMBER_OF_DRAWN_SHAPES) + ")"
+                    "error": this.ERROR_TOO_MANY_SHAPES + "(" + (NUMBER_OF_DRAWN_SHAPES) + ")" + this.ERROR_TRY_RANGE
                 };
             }
         }
@@ -445,7 +447,7 @@ ValueManager.prototype = {
             return {
                 "accepted": false,
                 "id": this.RANGE_ID,
-                "error": this.ERROR_TOO_MANY_SHAPES + "(infinity)"
+                "error": this.ERROR_TOO_MANY_SHAPES + "(infinity)" + this.ERROR_TRY_RANGE
             };
         }
 
@@ -453,7 +455,7 @@ ValueManager.prototype = {
             return {
                 "accepted": false,
                 "id": this.RANGE_ID,
-                "error": this.ERROR_TOO_MANY_SHAPES + "(" + (expectedRange) + ")"
+                "error": this.ERROR_TOO_MANY_SHAPES + "(" + (expectedRange) + ")" + this.ERROR_TRY_RANGE
             };
         }
 
