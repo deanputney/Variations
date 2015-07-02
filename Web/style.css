@@ -213,6 +213,10 @@ display: inline-flex;
     border-color: #008;*/
 }
 
+.input_tooltip:hover {
+    opacity: 0.5;
+}
+
 /*
 #draw_controls {
     display: block;

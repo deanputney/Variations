@@ -26,16 +26,16 @@
                         <div id="control_pane_second_half_vertical_container">
                             <div id="control_pane_second_half">
                                 <div class="input_field has_below_input_field">
-                                    <span class="input_hoverable input_validation_error" id="input_sides_error">!</span><span class="title_2">Number of sides in shape: </span><input value="5" class="input_editable" id='input_sides' onkeyup='updateInput("input_sides")' /><span class="input_hoverable input_tooltip">?</span>
+                                    <span class="input_hoverable input_validation_error" id="input_sides_error">!</span><span class="title_2">Number of sides in shape: </span><input value="5" class="input_editable" id='input_sides' onkeyup='updateInput("input_sides")' /><span class="input_hoverable input_tooltip" id="sides_tooltip">?</span>
                                 </div>
                                 <div class="input_field has_below_input_field">
-                                    <span class="input_hoverable input_validation_error" id="input_edges_error">!</span><span class="title_2">Number of edges to draw: </span><input value="3" class="input_editable" id='input_edges' onkeyup='updateInput("input_edges")' /><span class="input_hoverable input_tooltip">?</span>
+                                    <span class="input_hoverable input_validation_error" id="input_edges_error">!</span><span class="title_2">Number of edges to draw: </span><input value="3" class="input_editable" id='input_edges' onkeyup='updateInput("input_edges")' /><span class="input_hoverable input_tooltip" id="edges_tooltip">?</span>
                                 </div>
                                 <div class="input_field has_below_input_field">
-                                    <span class="input_hoverable input_validation_error" id="input_shape_error">!</span><span class="title_2">Draw source shape? </span><input value="false" class="input_editable" id='input_shape' onkeyup='updateInput("input_shape")' /><span class="input_hoverable input_tooltip">?</span>
+                                    <span class="input_hoverable input_validation_error" id="input_shape_error">!</span><span class="title_2">Draw source shape? </span><input value="false" class="input_editable" id='input_shape' onkeyup='updateInput("input_shape")' /><span class="input_hoverable input_tooltip" id="shape_tooltip">?</span>
                                 </div>
                                 <div class="input_field">
-                                    <span class="input_hoverable input_validation_error" id="input_range_error">!</span><span class="title_2">Range to display: </span><input value="-1,-1" class="input_editable" id='input_range' onkeyup='updateInput("input_range")' /><span class="input_hoverable input_tooltip">?</span>
+                                    <span class="input_hoverable input_validation_error" id="input_range_error">!</span><span class="title_2">Range to display: </span><input value="-1,-1" class="input_editable" id='input_range' onkeyup='updateInput("input_range")' /><span class="input_hoverable input_tooltip" id="range_tooltip">?</span>
                                 </div>
                                 <br>
                                 <div class="input field">
@@ -170,6 +170,36 @@
         document.getElementById("show_controls_div").onmouseup = function() {
             document.getElementById("show_controls_div").style.backgroundColor =  "rgba(64, 64, 64, 0.1)";
             document.getElementById("show_control_pane_text").style.color =  "rgba(64, 64, 194, 0.75)";
+        }
+
+        var preMouseoverHelpText = "";
+        document.getElementById("sides_tooltip").onmouseover = function() {
+            preMouseoverHelpText = document.getElementById("help_text").innerHTML;
+            document.getElementById("help_text").innerHTML = "Sides in a regular polygon";
+        }
+        document.getElementById("sides_tooltip").onmouseout = function() {
+            document.getElementById("help_text").innerHTML = preMouseoverHelpText;
+        }
+        document.getElementById("edges_tooltip").onmouseover = function() {
+            preMouseoverHelpText = document.getElementById("help_text").innerHTML;
+            document.getElementById("help_text").innerHTML = "Lines drawn between the vertices of a regular polygon";
+        }
+        document.getElementById("edges_tooltip").onmouseout = function() {
+            document.getElementById("help_text").innerHTML = preMouseoverHelpText;
+        }
+        document.getElementById("shape_tooltip").onmouseover = function() {
+            preMouseoverHelpText = document.getElementById("help_text").innerHTML;
+            document.getElementById("help_text").innerHTML = "A light outline of the regular polygon";
+        }
+        document.getElementById("shape_tooltip").onmouseout = function() {
+            document.getElementById("help_text").innerHTML = preMouseoverHelpText;
+        }
+        document.getElementById("range_tooltip").onmouseover = function() {
+            preMouseoverHelpText = document.getElementById("help_text").innerHTML;
+            document.getElementById("help_text").innerHTML = "Which of the variations to show (-1,-1 for \"all\")";
+        }
+        document.getElementById("range_tooltip").onmouseout = function() {
+            document.getElementById("help_text").innerHTML = preMouseoverHelpText;
         }
     </script>
 </html>
