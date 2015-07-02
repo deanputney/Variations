@@ -140,7 +140,7 @@
                 document.getElementById(divId + "_error").style.visibility = "hidden";
                 clearAll();
                 draw();
-                history.pushState("", "", "permutations.html?" + valueManager.toString());
+                history.pushState("", "", "variations.html?" + valueManager.toString());
             } else {
                 document.getElementById(divId + "_error").style.visibility = "visible";
                 document.getElementById("help_text").innerHTML = inputComment.error;
