@@ -2,4 +2,10 @@
 @pcmanfm --desktop --profile LXDE-pi
 @xscreensaver -no-splash
 sudo /home/pi/Variations/RasPi/Keyboard/a.out
-/usr/bin/chromium --kiosk --ignore-certificate-errors --disable-restore-session-state file:///home/pi/Variations/RasPi/variations.html
+
+# Start Chromium!
+# First delete any crashed flags in config
+sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium/Default/Preferences
+sed -i 's/"exit_type": "Crashed"/"exit_type": "None"/' ~/.config/chromium/Default/Preferences
+
+/usr/bin/chromium --kiosk --ignore-certificate-errors --disable-session-crashed-bubble --disable-restore-session-state file:///home/pi/Variations/RasPi/variations.html
